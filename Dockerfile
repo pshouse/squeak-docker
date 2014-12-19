@@ -18,7 +18,7 @@ RUN apt install -y libglu1-mesa:i386 libxrender1:i386 libfreetype6:i386
 #RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
 
 ENV VERSION 4.5
-ENV IMAGEROOT Squeak-$VERSION-All-In-One/Squeak-$VERSION-All-in-One.app/
+ENV IMAGEROOT Squeak-$VERSION-All-In-One/Squeak-$VERSION-All-in-One.app
 ENV RESOURCES $IMAGEROOT/Contents/Resources/
 ADD http://ftp.squeak.org/$VERSION/Squeak-$VERSION-All-in-One.zip Squeak.zip
 RUN unzip Squeak.zip
@@ -31,7 +31,7 @@ RUN unzip Squeak.zip
 #RUN sudo gem install hub
 
 ADD install.st /
-RUN $IMAGEROOT/Contents/Linux-i686/bin/squeak -vm-sound-null -vm-display-null -headless $RESOURCES/Squeak*.image /install.st
+RUN $IMAGEROOT/Contents/LinuxAndWindows/Linux-i686/bin/squeak -vm-sound-null -vm-display-null -headless $RESOURCES/Squeak*.image /install.st
 
 ADD run.sh /
 ADD _run.st /
