@@ -18,7 +18,7 @@ RUN apt install -y libglu1-mesa:i386 libxrender1:i386 libfreetype6:i386
 #RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
 
 ENV VERSION 4.5
-ENV IMAGEROOT /Squeak-$VERSION-All-in-One.app/
+ENV IMAGEROOT Squeak-$VERSION-All-In-One/Squeak-$VERSION-All-in-One.app/
 ENV RESOURCES $IMAGEROOT/Contents/Resources/
 ADD http://ftp.squeak.org/$VERSION/Squeak-$VERSION-All-in-One.zip Squeak.zip
 RUN unzip Squeak.zip
