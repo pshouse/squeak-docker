@@ -11,13 +11,6 @@ Installer ss
     install: 'OSProcess-dtl.73'.
 
 
-!MCVersionInfo methodsFor: 'accessing'!
-date
-    ^ date.! !
-!MCVersionInfo methodsFor: 'accessing'!
-time
-    ^ time.! !
-
 | log |
 
 log := [:msg | | str |
