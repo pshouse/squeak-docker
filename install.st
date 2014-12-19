@@ -11,17 +11,6 @@ Installer ss
     install: 'OSProcess-dtl.73'.
 
 
-| log |
-
-log := [:msg | | str |
-    str := ' ---> ', msg.
-    FileStream stdout nextPutAll: str; nextPut: Character lf; flush.
-    Transcript cr; show: str].
-
-log value: 'Installing SWA Utilities'.
-(Installer monticello http: 'http://www.hpi.uni-potsdam.de/hirschfeld/squeaksource/SwaUtilities')
-    addPackage: 'Icons';
-    install.
 
 
 
