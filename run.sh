@@ -1,3 +1,4 @@
+#!/bin/bash
 #Xvfb -screen 0 1024x768x16 -ac &
 #sleep 1
 #DISPLAY=:0 
