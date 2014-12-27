@@ -1,27 +1,11 @@
-FROM ubuntu:14.04 
-RUN dpkg --add-architecture i386
-RUN apt-get update
-RUN apt-get install -yq git unzip curl
-RUN apt-get install -yq libc6:i386
-RUN apt-get install -yq xvfb
-#RUN apt-get install -yq websockify python-setuptools
-
-# Squeak display driver
-RUN apt-get install -yq libgl1-mesa-glx:i386 libxext6:i386 libsm6:i386 libice6:i386 libx11-6:i386
-
-RUN apt-get install -y libglu1-mesa:i386 libxrender1:i386 libfreetype6:i386
-
-#RUN apt-get install -y nginx
-
-# setup VNC
-#RUN mkdir /.vnc
-#RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+FROM pshouse/squeak-base 
 
 ENV VERSION 4.5
 ENV IMAGEROOT Squeak-$VERSION-All-In-One/Squeak-$VERSION-All-in-One.app
 ENV RESOURCES $IMAGEROOT/Contents/Resources/
 ADD http://ftp.squeak.org/$VERSION/Squeak-$VERSION-All-in-One.zip Squeak.zip
 RUN unzip Squeak.zip
+
 #RUN ln -s $RESOURCES/Squeak4.5-13680.changes /usr/share/nginx/html
 #RUN ln -s $RESOURCES/Squeak4.5-13680.image /usr/share/nginx/html
 #RUN chmod a+r $RESOURCES/Squeak4.5-13680.changes
